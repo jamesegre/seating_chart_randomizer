@@ -10,6 +10,21 @@ def create_list_from_text(text):
 
     return value
 
+def create_list_in_list(text_list):
+    #if list is student name and kagan number
+    return_list = []
+
+    for i in text_list:
+        return_list.append(i.split('\t'))
+
+    return return_list
+
+def text_list_list(text):
+    #if list is student name and kagan number
+    value = create_list_from_text(text)
+
+    return create_list_in_list(value)
+
 def create_num_list(text):
     value = 0
     value_list = []
@@ -33,14 +48,6 @@ def random_seat_chart(text):
     return create_seat_chart(create_list_from_text(text),
                                   create_num_list(text))
 
-def create_list_in_list(text_list):
-    #if list is student name and kagan number
-    return_list = []
-
-    for i in text_list:
-        return_list.append(i.split('\t'))
-
-    return return_list
 
 def kagan_random_seats(text_list):
     ones = [5,7,13,15,21,23]
@@ -69,17 +76,53 @@ def kagan_random_seats(text_list):
             elif twos_counter < 6:
                 i.append(twos[twos_counter])
                 twos_counter += 1
+            elif threes_counter < 6:
+                i.append(threes[threes_counter])
+                threes_counter += 1
+            elif fours_counter < 6:
+                i.append(fours[fours_counter])
+                fours_counter += 1 
         elif int(i[1]) == 2:
-            if twos_counter < 6:
+            if ones_counter < 6:
+                i.append(ones[ones_counter])
+                ones_counter += 1
+            elif twos_counter < 6:
                 i.append(twos[twos_counter])
-            twos_counter += 1
+                twos_counter += 1
+            elif threes_counter < 6:
+                i.append(threes[threes_counter])
+                threes_counter += 1
+            elif fours_counter < 6:
+                i.append(fours[fours_counter])
+                fours_counter += 1 
         elif int(i[1]) == 3:
-            i.append(threes[threes_counter])
-            threes_counter += 1
+            if ones_counter < 6:
+                i.append(ones[ones_counter])
+                ones_counter += 1
+            elif twos_counter < 6:
+                i.append(twos[twos_counter])
+                twos_counter += 1
+            elif threes_counter < 6:
+                i.append(threes[threes_counter])
+                threes_counter += 1
+            elif fours_counter < 6:
+                i.append(fours[fours_counter])
+                fours_counter += 1 
         elif int(i[1]) == 4:
-            i.append(fours[fours_counter])
-            fours_counter += 1
+            if ones_counter < 6:
+                i.append(ones[ones_counter])
+                ones_counter += 1
+            elif twos_counter < 6:
+                i.append(twos[twos_counter])
+                twos_counter += 1
+            elif threes_counter < 6:
+                i.append(threes[threes_counter])
+                threes_counter += 1
+            elif fours_counter < 6:
+                i.append(fours[fours_counter])
+                fours_counter += 1 
 
     return text_list
-
+def kagan_diagnostics()
+    
 
